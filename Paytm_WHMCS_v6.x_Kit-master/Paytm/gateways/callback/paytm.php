@@ -57,7 +57,7 @@ if(isset($response['ORDERID']) && isset($response['STATUS']) && isset($response[
 		if($responseParamList['STATUS']=='TXN_SUCCESS' && $responseParamList['TXNAMOUNT']==$response['TXNAMOUNT'])
 		{
 			$gatewayresult = "success";
-			addInvoicePayment($txnid, $paytm_trans_id, $amount, $gatewaymodule); 
+			addInvoicePayment($txnid, $paytm_trans_id, $amount, 0, $gatewaymodule); 
 			logTransaction($GATEWAY["name"], $response, $response['RESPMSG']);
 		}
 		else{
